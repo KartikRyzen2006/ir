@@ -1,0 +1,19 @@
+def calculate_metrics(retrieved_set,relevant_set):
+
+    true_positive=len(retrieved_set.intersection(relevant_set))
+    false_positive=len(retrieved_set.difference(relevant_set))
+    false_negative=len(relevant_set.difference(retrieved_set))
+
+    precision=true_positive/(true_positive+false_positive)
+    recall=true_positive/(true_positive+false_negative)
+
+    f_measure=2*precision*recall/(precision+recall)
+
+    print("Precision:",precision)
+    print("Recall:",recall)
+    print("F-measure:",f_measure)
+
+retrieved_set=set(["doc1","doc2","doc3"])
+relevant_set=set(["doc1","doc4"])
+
+calculate_metrics(retrieved_set,relevant_set)

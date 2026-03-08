@@ -1,0 +1,7 @@
+pip install nltk numpy scikit-learn pandas requests beautifulsoup4
+
+python -m venv venv
+venv\Scripts\activate
+
+import nltk
+nltk.download('stopwords')
